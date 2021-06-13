@@ -23,7 +23,7 @@ import csv
 path = "images.jpg"
 img = mpimg.imread(path)
 imgplot = plt.imshow(img)
-#plt.show()
+plt.show()
 
 ## Transform the image in the +x direction by 25%, and create an image
 hor = img.shape[0]
@@ -32,7 +32,7 @@ translate = np.float32([[1,0,0.25*hor],[0,1,0]])
 
 translate_x = cv2.warpAffine(img,translate,(img.shape[1],img.shape[0]))
 translate_x = plt.imshow(translate_x)
-#plt.show()
+plt.show()
 
 ## Transform the image in the +y direction by 25%, and create an image
 hor = img.shape[0]
@@ -41,19 +41,19 @@ translate = np.float32([[1, 0, 0], [0, 1, 0.25*vert]])
 
 translate_y = cv2.warpAffine(img,translate,(img.shape[1],img.shape[0]))
 translate_y = plt.imshow(translate_y)
-#plt.show()
+plt.show()
 
 ## Rotate the image in Z by 90 degree
 angle = 90
 rotate_90 = imutils.rotate(img, angle) 
 rotate_90 = plt.imshow(rotate_90)
-#plt.show()
+plt.show()
 
 ## Rotate the image in Z by -90 degree
 angle = -90
 rotate_neg_90 = imutils.rotate(img, angle) 
 rotate_neg_90 = plt.imshow(rotate_neg_90)
-#plt.show()
+plt.show()
 
 ## From the center of the image, in all directions, increase the RGB values of the pixels in a manner that, 
 ## each pixel from the center, the percentage drops by 1%. i.e. the center pixel's RGB will increase by 50%,
